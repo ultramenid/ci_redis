@@ -1,4 +1,6 @@
 **Installation Ubuntu 18.04**
+
+
 `apt update 
 	add-apt-repository -y ppa:ondrej/php 
 	apt-get install libapache2-mod-php php-common php-xml php-zip php-mysql unzip php-intl php-curl php-mbstring wget php-redis apache2 composer`
