@@ -34,7 +34,7 @@
                     'database' => 0,                     //dbname
                 ],
 **go this [codeigniter-predis](https://github.com/Maykonn/codeigniter-predis) for more information.**
-**create virtualhost**  `/etc/apache2/sites-available/redis.conf` **, seems like this : **
+**create virtualhost**  `/etc/apache2/sites-available/redis.conf` :
 
 	    <VirtualHost *:80>
 				 ServerAdmin admin@yourdomain.com
