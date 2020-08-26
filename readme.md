@@ -10,20 +10,19 @@
     
 **Configuration**
 
-go to `var/www/html & clone this repository`
+**go to** `var/www/html & clone this repository`
 
-give permission  `chmod -R 777 /var/www/html/ci_redis/`
+**give permission**  `chmod -R 777 /var/www/html/ci_redis/`
 
-install [Predis](https://github.com/predis/predis)
+**install [Predis](https://github.com/predis/predis) : **
 
- go to `/application/libraries/codeigniter_predis/`
+ 	go to /application/libraries/codeigniter_predis/
  
- go `composer install`
+ 	go composer install
 
-configure redis connection :
+**configure redis connection :**
 
- go to `/application/config/codeigniter_predis.php 
-	change this line`
+ **go to** `/application/config/codeigniter_predis.php` **change this line**
 
     'default_server' => 'localhost',        
             'servers' => [
@@ -34,8 +33,8 @@ configure redis connection :
                     'password' => 'passsword',           //defult NULL
                     'database' => 0,                     //dbname
                 ],
-go this [codeigniter-predis](https://github.com/Maykonn/codeigniter-predis) for more information.
-create virtualhost `/etc/apache2/sites-available/redis.conf`, seems like this :
+**go this [codeigniter-predis](https://github.com/Maykonn/codeigniter-predis) for more information.**
+**create virtualhost**  `/etc/apache2/sites-available/redis.conf` **, seems like this : **
 
 	    <VirtualHost *:80>
 				 ServerAdmin admin@yourdomain.com
@@ -50,14 +49,14 @@ create virtualhost `/etc/apache2/sites-available/redis.conf`, seems like this :
 			 ErrorLog /var/log/apache2/codeigniter-error_log
 			 CustomLog /var/log/apache2/codeigniter-access_log common
 		</VirtualHost>
-enable site
+**enable site**
 
-`  a2ensite redis.conf
-or 
- a2ensite /etc/apache2/sites-available/redis.conf `
+	  a2ensite redis.conf
+		or 
+	 a2ensite /etc/apache2/sites-available/redis.conf 
 
-enable rewrite `a2enmod rewrite`
-restart service `use whatever control u like`
+**enable rewrite** `a2enmod rewrite`
+**restart service** `use whatever control u like`
 
 **Edit your codeigniter apps base_url using LoadbalanceIPaddress**
 
