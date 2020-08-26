@@ -16,13 +16,13 @@
 
 **install** [Predis](https://github.com/predis/predis)  : 
 
- 	go to /application/libraries/codeigniter_predis/
+ 	go to ci_redis/application/libraries/codeigniter_predis/
  
  	go composer install
 
 **configure redis connection :**
 
- **go to** `/application/config/codeigniter_predis.php` **change this line**
+ **go to** `ci_redis/application/config/codeigniter_predis.php` **change this line**
 
     'default_server' => 'localhost',        
             'servers' => [
