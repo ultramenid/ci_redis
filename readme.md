@@ -36,7 +36,7 @@ create virtualhost `/etc/apache2/sites-available/redis.conf`, seems like this :
 	    <VirtualHost *:80>
 				 ServerAdmin admin@yourdomain.com
 				 DocumentRoot /var/www/html/ci_redis
-				 ServerName yourdomain.com/ipaddress
+				 ServerName LoadbalanceIPaddress
 			 <Directory /var/www/html/ci_redis/>
 					Options +FollowSymLinks
 					AllowOverride All
@@ -55,4 +55,5 @@ or
 enable rewrite `a2enmod rewrite`
 restart service `use whatever control u like`
 
-**Edit your codeigniter apps**
+**Edit your codeigniter apps base_url using LoadbalanceIPaddress**
+
