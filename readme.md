@@ -14,7 +14,7 @@
 
 **give permission**  `chmod -R 777 /var/www/html/ci_redis/`
 
-**install [Predis](https://github.com/predis/predis) : **
+**install** [Predis](https://github.com/predis/predis)  : 
 
  	go to /application/libraries/codeigniter_predis/
  
@@ -55,8 +55,7 @@
 		or 
 	 a2ensite /etc/apache2/sites-available/redis.conf 
 
-**enable rewrite** `a2enmod rewrite`
-**restart service** `use whatever control u like`
+**enable rewrite** `a2enmod rewrite` & **restart service** `use whatever control u like`
 
 **Edit your codeigniter apps base_url using LoadbalanceIPaddress**
 
