@@ -1,3 +1,6 @@
+![enter image description here](https://github.com/ultramenid/ci_redis/blob/master/Screenshot_6.jpg?raw=true)
+
+
 **Install Codeigniter 3 in ubuntu 18.04**
 
 
