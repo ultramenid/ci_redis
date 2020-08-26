@@ -16,8 +16,9 @@ give permission  `chmod -R 777 /var/www/html/ci_redis/`
 
 install [Predis](https://github.com/predis/predis)
 
- go to `/application/libraries/codeigniter_predis/
-	 go composer install`
+ go to `/application/libraries/codeigniter_predis/`
+ 
+ go `composer install`
 
 configure redis connection :
 
