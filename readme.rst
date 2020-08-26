@@ -1,70 +1,57 @@
 ###################
-What is CodeIgniter
+Installation Ubuntu 18.04
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+-apt update 
+-add-apt-repository -y ppa:ondrej/php //repository php
+
+-apt-get install libapache2-mod-php php-common php-xml php-zip php-mysql unzip php-
+ intl php-curl php-mbstring wget php-redis apache2 composer
+
 
 *******************
-Release Information
+Configuration
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+- go to <em>var/www/html</em> & clone this repository
 
-**************************
-Changelog and New Features
-**************************
+- chmod -R 777 /var/www/html/ci_redis/  //give permission
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
-
-*******************
-Server Requirements
-*******************
-
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+- install predis: 
+	- go to <em>/application/libraries/codeigniter_predis/</em>
+	- go <em> composer install </em>
+	
+- configure redis connection :
+	- go to <em> /application/config/codeigniter_predis.php </em>
+	change this line
+	<code> 
+		 'default_server' => 'localhost',
+            'servers' => [
+                'localhost' => [
+                    'scheme' => 'tcp', // tcp/tls
+                    'host' => 'localhost' // ip / domain
+                    'port' => 25061, 
+                    'password' => 'passsword', //defult NULL
+                    'database' => 0, //dbname
+                ],
+	</code>
+	go to this [repository](https://github.com/Maykonn/codeigniter-predis), for more guide
+- create virtualhost <em>nano /etc/apache2/sites-available/redis.conf</em>
+	<code> 
+			<VirtualHost *:80>
+				 ServerAdmin admin@yourdomain.com
+				 DocumentRoot /var/www/html/ci_redis
+				 ServerName yourdomain.com/ipaddress
+			 <Directory /var/www/html/ci_redis/>
+					Options +FollowSymLinks
+					AllowOverride All
+					Order allow,deny
+					allow from all	
+			 </Directory>
+			 ErrorLog /var/log/apache2/codeigniter-error_log
+			 CustomLog /var/log/apache2/codeigniter-access_log common
+		</VirtualHost>
+	</code>
+- enable site <em> a2ensite redis.conf // /etc/apache2/sites-available/redis.conf </em>
+- enable rewrite <em> a2enmod rewrite </em>
+- restart service <em> use whatere control u like  </em>
