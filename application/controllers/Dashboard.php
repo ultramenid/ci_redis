@@ -9,7 +9,7 @@ class Dashboard extends CI_Controller {
 	echo base_url();
         $this->redis = new \CI_Predis\Redis();
          $data = [
-            'title'=> 'Innolabs - Enter your name'
+            'title'=> 'Enter your name'
         ];
         
         $this->form_validation->set_rules('nama','Nama','required');
