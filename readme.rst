@@ -2,27 +2,26 @@
 Installation Ubuntu 18.04
 ###################
 
--apt update 
--add-apt-repository -y ppa:ondrej/php //repository php
+apt update 
+add-apt-repository -y ppa:ondrej/php //repository php
 
--apt-get install libapache2-mod-php php-common php-xml php-zip php-mysql unzip php-
- intl php-curl php-mbstring wget php-redis apache2 composer
+apt-get install libapache2-mod-php php-common php-xml php-zip php-mysql unzip php-intl php-curl php-mbstring wget php-redis apache2 composer
 
 
 *******************
 Configuration
 *******************
 
-- go to <em>var/www/html</em> & clone this repository
+ go to var/www/html & clone this repository
 
-- chmod -R 777 /var/www/html/ci_redis/  //give permission
+ chmod -R 777 /var/www/html/ci_redis/  //give permission
 
-- install predis: 
-	- go to <em>/application/libraries/codeigniter_predis/</em>
-	- go <em> composer install </em>
+ install predis: 
+	 go to /application/libraries/codeigniter_predis/
+	 go composer install 
 	
-- configure redis connection :
-	- go to <em> /application/config/codeigniter_predis.php </em>
+ configure redis connection :
+	 go to /application/config/codeigniter_predis.php 
 	change this line
 	<code> 
 		 'default_server' => 'localhost',
