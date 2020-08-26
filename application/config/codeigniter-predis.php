@@ -7,15 +7,15 @@ switch (ENVIRONMENT) {
     case 'development':
     case 'testing':
         $config['redis'] = [
-            'default_server' => 'localhost',
-            'servers' => [
-                'localhost' => [
-                    'scheme' => 'tls',
-                    'host' => 'private-db-redis-sgp1-23648-do-user-2193651-0.a.db.ondigitalocean.com',
-                    'port' => 25061,
-                    'password' => 'm46qyh72evakgt5z',
-                    'database' => 0,
-                ],
+            'default_server' => 'localhost',        
+        'servers' => [
+            'localhost' => [
+                'scheme' => 'tcp',                   //tcp, tls
+                'host' => 'localhost'                // ip , domain
+                'port' => 25061, 
+                'password' => 'passsword',           //defult NULL
+                'database' => 0,                     //dbname
+            ],
                 'another_instance_example' => [
                     'scheme' => 'tcp',
                     'host' => '127.0.0.1',
