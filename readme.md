@@ -10,7 +10,7 @@
     
 **Configuration**
 
-**go to** `var/www/html & clone this repository`
+**go to** `/var/www/html & clone this repository`
 
 **give permission**  `chmod -R 777 /var/www/html/ci_redis/`
 
