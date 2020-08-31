@@ -39,7 +39,7 @@
 	    <VirtualHost *:80>
 				 ServerAdmin admin@yourdomain.com
 				 DocumentRoot /var/www/html/ci_redis
-				 ServerName LoadbalanceIPaddress
+				 ServerName ipaddress
 			 <Directory /var/www/html/ci_redis/>
 					Options +FollowSymLinks
 					AllowOverride All
@@ -57,5 +57,5 @@
 
 **enable rewrite** `a2enmod rewrite` & **restart service** `use whatever control u like`
 
-**Edit your codeigniter apps base_url using LoadbalanceIPaddress**
+**Edit your codeigniter apps base_url using ipaddress**
 
